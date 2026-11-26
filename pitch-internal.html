@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SZ-003 同心牌 · 内部 Pitch 手册（Baron × 老王）</title>
+<style>
+  :root { --ink:#1f1b17; --paper:#f3eee3; --card:#faf7f0; --line:rgba(31,27,23,.12); --gold:#8a6a3a; --gold2:#6f5530; --red:#a3342b; --green:#2f6b4f; --muted:#8d8478; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:-apple-system,'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif; line-height:1.7; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-family:'Songti SC','Noto Serif SC','SimSun',serif; font-weight:400; font-size:34px; letter-spacing:.12em; margin:0 0 6px; }
+  h2 { font-family:'Songti SC','Noto Serif SC','SimSun',serif; font-weight:600; font-size:22px; letter-spacing:.08em; margin:44px 0 14px; padding-bottom:8px; border-bottom:1px solid var(--gold); display:flex; gap:12px; align-items:baseline; }
+  h2 small { font-size:12px; color:var(--muted); letter-spacing:.2em; font-family:Georgia,serif; }
+  h3 { font-size:16px; margin:22px 0 8px; color:var(--gold2); }
+  .lead { color:#3b3530; font-size:15px; }
+  .tag { display:inline-block; font-size:11px; padding:2px 8px; border-radius:999px; border:1px solid var(--red); color:var(--red); margin-left:8px; vertical-align:middle; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:12px 0; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  th { text-align:left; font-size:12px; color:var(--muted); letter-spacing:.08em; padding:10px 12px; border-bottom:1px solid var(--line); background:#efe9dc; }
+  td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  tr:last-child td { border-bottom:0; }
+  .say { background:#fff; border-left:3px solid var(--gold); padding:12px 16px; border-radius:0 10px 10px 0; margin:10px 0; font-size:15px; }
+  .say b { color:var(--gold2); }
+  .no { background:#fdf5f3; border-left:3px solid var(--red); padding:10px 14px; border-radius:0 10px 10px 0; margin:8px 0; font-size:14px; }
+  .ok { background:#f1f7f3; border-left:3px solid var(--green); padding:10px 14px; border-radius:0 10px 10px 0; margin:8px 0; font-size:14px; }
+  .kpi { display:flex; flex-direction:column; gap:2px; }
+  .kpi b { font-family:Georgia,'Times New Roman',serif; font-size:30px; font-weight:400; color:var(--gold2); }
+  .kpi span { font-size:12px; color:var(--muted); }
+  .bar { display:grid; grid-template-columns:150px 1fr 90px; gap:10px; align-items:center; font-size:13px; margin:6px 0; }
+  .bar i { display:block; height:12px; border-radius:999px; background:linear-gradient(90deg,#b8955f,#8a6a3a); }
+  .bar em { font-style:normal; text-align:right; font-family:Georgia,serif; }
+  .timeline { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .timeline li { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; font-size:13px; }
+  .timeline li b { display:block; font-family:Georgia,serif; color:var(--gold2); font-size:18px; font-weight:400; }
+  .role { display:grid; grid-template-columns:120px 1fr; gap:10px; padding:8px 0; border-bottom:1px solid var(--line); font-size:14px; }
+  .role:last-child { border-bottom:0; }
+  .role b { color:var(--gold2); }
+  .foot { margin-top:40px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:14px; }
+  @media (max-width:760px){ .grid,.grid3,.timeline{grid-template-columns:1fr;} .bar{grid-template-columns:110px 1fr 70px;} }
+  @media print { body{background:#fff;} .wrap{padding:0;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p style="font-size:12px;letter-spacing:.3em;color:var(--gold);margin:0">B-LABZ · SZ-003 · 内部文件<span class="tag">勿外流</span></p>
+  <h1>同心牌黄金 · Pitch 手册</h1>
+  <p class="lead">给 Baron 与老王。目标只有一个：用 Demo 换到一次 20 分钟的流程访谈，再把访谈变成付费诊断或单门店试点。这份手册讲我们要赚什么、怎么讲、客户会怎么反驳、谁负责什么。</p>
+
+  <h2>一、先搞清楚我们在卖什么 <small>WHAT WE SELL</small></h2>
+  <div class="grid3">
+    <div class="card kpi"><b>¥60,000</b><span>一次性开发投入（基准假设，可调）</span></div>
+    <div class="card kpi"><b>7.5 个月</b><span>客户回收期（基准情境）</span></div>
+    <div class="card kpi"><b>60%</b><span>客户首年 ROI（基准情境）</span></div>
+  </div>
+  <div class="card">
+    <p><b>我们不卖黄金理财、不碰金价投机。</b>我们卖的是「顾客线上下单 → 门店备货 → 提货码 → 到店核销 → 对账」这条闭环的软件与内容，让同心牌少出错、少人工、多成交。Demo 已经能跑完整流程，三个界面（顾客端、门店工作台、总部后台）加商业模型页都做好了。</p>
+    <p style="margin:0">一句话版本：<b>「你们的小程序已经有金价和金条，但顾客下单后门店怎么备货、怎么核销、怎么对账，现在是人在补。我们把这段补成系统。」</b></p>
+  </div>
+
+  <h2>二、我们的商业模式（内部版） <small>BUSINESS MODEL</small></h2>
+  <table>
+    <thead><tr><th style="width:26%">收入来源</th><th>内容</th><th style="width:22%">定价逻辑</th><th style="width:16%">成立前提</th></tr></thead>
+    <tbody>
+      <tr><td><b>① 付费诊断 + 原型</b></td><td>现况流程图、数据基线、单一试点方案、验收标准。Demo 就是原型的一半。</td><td>固定费。建议报 ¥20,000–40,000 级距，依门店数与资料取得难度。</td><td>对方有决策人愿意坐下来 20 分钟</td></tr>
+      <tr><td><b>② 单模组开发 + 串接</b></td><td>依痛点择一：商品信息／结账模块，或单门店核销／对账模块；能接现有系统就沿用。</td><td>分段报价。基准情境抓 ¥60,000 一次性 + 每月维运 ¥3,000。</td><td>拿得到 API／权限、有门店负责人</td></tr>
+      <tr><td><b>③ 验收后维护 / 授权</b></td><td>月费含 bug 修、行情源与门店资料维护、小改版。</td><td>每月 ¥3,000 起（就是模拟器里的「新增营运成本」）。</td><td>试点上线后才收</td></tr>
+      <tr><td><b>④ 内容包</b></td><td>商品／门店短片、商品图、提货说明素材。Demo 里那支 15 秒 AI 短片就是样品。</td><td>独立计价，明订片数、授权、修改轮次。</td><td>对方有流量入口或素材预算</td></tr>
+      <tr><td><b>⑤ 后续扩张</b></td><td>多门店报表、渠道归因、经销商入口、售后与会员回访。</td><td>一店验收后以新增需求排期报价。</td><td>先有一店上线</td></tr>
+    </tbody>
+  </table>
+  <div class="card">
+    <h3 style="margin-top:0">老王要记住的三个数字怎么来的</h3>
+    <div class="bar"><span>月有效访问</span><i style="width:100%"></i><em>20,000 人</em></div>
+    <div class="bar"><span>购买率 1% → 1.3%</span><i style="width:30%"></i><em>+60 单/月</em></div>
+    <div class="bar"><span>60 单 × 10g × ¥15 毛利</span><i style="width:45%"></i><em>¥9,000/月</em></div>
+    <div class="bar"><span>+节省 ¥2,000 − 新增成本 ¥3,000</span><i style="width:40%"></i><em>净效益 ¥8,000/月</em></div>
+    <div class="bar"><span>¥60,000 ÷ ¥8,000</span><i style="width:62%"></i><em>7.5 个月回收</em></div>
+    <p style="font-size:13px;color:var(--muted);margin:10px 0 0">这些全是「假设值」。访谈的目的就是把它们换成客户真实数字。保守情境（购买率只到 1.1%、没有节省）净效益是 0、无法回收，这点我们自己要先讲，不要等客户算。</p>
+  </div>
+
+  <h2>三、90 秒 Demo 怎么演 <small>DEMO SCRIPT</small></h2>
+  <ul class="timeline">
+    <li><b>0–20s</b>顾客端首页点 10g 金条。指出：金价、费用拆分、报价 5 分钟效期、选门店与时段。<br><i>话术：「顾客自己看懂买什么、付多少、去哪领。」</i></li>
+    <li><b>20–40s</b>模拟确认订单。切到门店工作台，指出待备货立刻出现、库存保留 1 件。<br><i>话术：「同一张单，店员马上看到，不用微信群喊。」</i></li>
+    <li><b>40–65s</b>门店点确认备货。切回顾客端出现提货码。<br><i>话术：「提货码只在顾客手上，店员看不到，防冒领。」</i></li>
+    <li><b>65–90s</b>门店输入提货码核销。两端同时完成、库存只扣一次、对账自动出。<br><i>话术：「这一步以前是店员手抄或对 Excel。」</i></li>
+  </ul>
+  <div class="card">
+    <h3 style="margin-top:0">加演（视反应挑 1–2 个）</h3>
+    <ul style="margin:0;padding-left:18px;font-size:14px">
+      <li>切到南山店核销深南的码 → 被挡。「异店、错码、重复核销都挡得住。」</li>
+      <li>后台「价格管理」发布新价 → 顾客端立刻变。「总部统一定价，门店不会各报各的。」</li>
+      <li>后台「数据分析」漏斗与渠道。「哪个入口带来的单最多，一眼看到。」</li>
+      <li>商业模型页跑收益模拟器 → 现场把数字换成他们的。</li>
+      <li>首页 15 秒短片。「这是内容包的样品，素材可以直接拿去投。」</li>
+    </ul>
+  </div>
+
+  <h2>四、Pitch 话术（照这个顺序讲） <small>TALK TRACK</small></h2>
+  <h3>开场（30 秒，老王讲）</h3>
+  <div class="say">「我看了你们的小程序，金价、金条、订单、提货入口都有了，<b>基础比很多同行好</b>。我们做了一个小演示，不改你们的东西，只是把顾客买 10 克金条、门店备货、提货核销这段串起来给你看。今天想占你 20 分钟，看一笔你们现在真实的流程。」</div>
+  <h3>Demo 后的转折（Baron 讲）</h3>
+  <div class="say">「刚才看到的都是示范资料。<b>我们真正想知道的是：你们现在卡在哪一环？</b>是进店流量不够、付款转化低、还是门店备货提货对账最花人？你告诉我们哪一个最痛，我们就只做那一个。」</div>
+  <h3>收敛（老王讲）</h3>
+  <div class="say">「我们不急着签开发。第一步是一次<b>付费诊断</b>：把你们现在的流程画出来、数据基线抓出来、挑一间店两个 SKU 做试点方案，附验收标准。你看完觉得值，我们再谈开发；觉得不值，诊断报告留给你。」</div>
+  <h3>结尾一定要拿到的三件事</h3>
+  <div class="ok">1. 一笔去识别的真实订单流程（从付款到核销）　2. 月访问／下单／付款／提货的大概数字　3. 谁能拍板、谁管小程序、谁管门店</div>
+
+  <h2>五、客户可能怎么反驳 <small>OBJECTIONS</small></h2>
+  <table>
+    <thead><tr><th style="width:30%">客户说</th><th>我们回</th></tr></thead>
+    <tbody>
+      <tr><td>「我们小程序是外包做的，动不了。」</td><td>「所以我们不动它。先做诊断，看哪一段能用界面或小模块接上；接不上就只做门店端工作台，独立跑。」</td></tr>
+      <tr><td>「金价实时行情你们接得了吗？」</td><td>「Demo 刻意不接，因为行情源、更新频率、延迟标示要你们确认授权。正式版接你们指定的源，画面会标延迟。」</td></tr>
+      <tr><td>「门店店员年纪大，不会用。」</td><td>「门店端只有五个按钮：确认备货、输提货码、看库存、看预约、对账。我们现场让店长试一遍，三分钟。」</td></tr>
+      <tr><td>「多少钱？」</td><td>「分三段：诊断固定费、试点开发、上线后月维护。今天只谈第一段。数字我们当场用你们的访问量和毛利算给你看回收期。」<br><span style="color:var(--red);font-size:13px">⚠ 不要在第一次见面报开发总价。</span></td></tr>
+      <tr><td>「能不能保证多卖多少？」</td><td>「不能，也不该有人能。我们能保证的是备货、核销、对账这三件事少出错、少花人，成交看你们的流量和价格。」</td></tr>
+      <tr><td>「能做回购／存金／金价提醒吗？」</td><td>「回购放远期，要先确认你们有合法业务与鉴定流程。虚拟余额、理财、保本这类我们不做，这是底线。」</td></tr>
+      <tr><td>「你们有别家案例吗？」</td><td>「这是我们在黄金零售的第一个试点，所以才用诊断费换试点，价格会比成熟方案低，条件是允许我们做成案例。」</td></tr>
+    </tbody>
+  </table>
+
+  <h2>六、绝对不要说的话 <small>DON'T</small></h2>
+  <div class="no">不要说「上海黄金交易所会员」「品牌 60 年」这类我们没核实的资格，截图上有不代表能用。</div>
+  <div class="no">不要承诺销量、转化率、金价涨跌，不要用「金价要涨了」当卖点。</div>
+  <div class="no">不要把示范数据讲成真实数据。Demo 每一页都标了「演示数据」，被问就直接说。</div>
+  <div class="no">不要在第一次见面报总价、不要答应免费做。</div>
+
+  <h2>七、分工 <small>ROLES</small></h2>
+  <div class="card">
+    <div class="role"><b>老王</b><span>开场、收敛、谈钱。负责关系与决策人，拿到三件事。</span></div>
+    <div class="role"><b>Baron</b><span>操作 Demo、答技术与流程问题、现场改模拟器数字。会后 24 小时内发诊断方案。</span></div>
+    <div class="role"><b>会前</b><span>重置 Demo（顶栏「重置演示」）、确认电脑与手机都能开、备好 10 克订单一次跑通；选好主题（宋简或刻本）不要现场切。</span></div>
+    <div class="role"><b>会后</b><span>当天发两页摘要：他们说的痛点、我们建议的诊断范围与固定费、下一次会议时间。</span></div>
+  </div>
+
+  <h2>八、下一次接触要问的六题 <small>QUESTIONS</small></h2>
+  <table>
+    <thead><tr><th>#</th><th>问</th><th style="width:36%">要拿到的判断</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>小程序是谁的帐号？运营主体、品牌方、收款方、开发商分别是谁？</td><td>谁可决策、谁有程序码／资料／API 权限</td></tr>
+      <tr><td>2</td><td>几家直营、合作点、经销商？能带我看一笔从付款到核销的单吗？</td><td>备货、库存、提货、退款、日结是谁负责</td></tr>
+      <tr><td>3</td><td>月访问、下单、付款、完成提货各多少？平均几克？哪些渠道？</td><td>量化漏斗、门店负载、主要流失点</td></tr>
+      <tr><td>4</td><td>参考行情和商品价从哪来？何时固定结算价？费用、超时、取消怎么算？</td><td>定价资料权限、收款与正式串接要求</td></tr>
+      <tr><td>5</td><td>每单或每克毛利区间？客服、备货、核销、对账哪个最耗时？</td><td>软件试点能带来多少利润或省多少成本</td></tr>
+      <tr><td>6</td><td>短片和流量现在谁做？只试一件事，想改哪个指标？谁定预算？</td><td>选软件或内容、试点门店、决策人、费用上限</td></tr>
+    </tbody>
+  </table>
+
+  <p class="foot">Demo 位置：sz-003-gold-demo（npm run dev → http://localhost:5173/）。客户版文件：proposal-client.html。数字来源：SZ-003 商业提案第 06、07、10、11 节；收费级距为内部建议，正式报价另议。</p>
+</div>
+</body>
+</html>
